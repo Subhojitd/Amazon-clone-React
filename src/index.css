@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,400&family=Ubuntu:wght@300;400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+    .header-hover{
+        @apply px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-200 rounded-sm;
+    }
+    .footer-hover{
+        @apply text-sm py-1 font-titleFont tracking-wide hover:text-gray-100 cursor-pointer hover:underline duration-150;
+    }
+}
