@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     // Header Container
-    <div>
+    <div className="w-full sticky top-0 z-50">
       <div className="w-full bg-amazon_blue text-white px-4 py-2 flex items-center gap-4">
         {/* logo */}
         <div className="header-hover">
@@ -21,7 +21,7 @@ const Header = () => {
         </div>
 
         {/* location and delivery  */}
-        <div className="header-hover gap-2">
+        <div className="header-hover gap-2 hidden mdl:inline-flex">
           <PlaceOutlinedIcon />
           <p className="text-sm text-lightText font-light flex flex-col">
             Deliver to{" "}
@@ -32,7 +32,7 @@ const Header = () => {
         </div>
 
         {/* Search Bar */}
-        <div className="h-10 rounded-md flex flex-grow relative">
+        <div className="h-10 rounded-md hidden lgl:flex flex-grow relative">
           <span
             onClick={() =>setshowDropdown(!showDropdown)}
             className=" w-14 h-full bg-gray-200  hover:bg-gray-300 border-2 cursor-pointer duration-300 text-sm text-amazon_blue font-titleFont flex items-center justify-center rounded-tl-md rounded-bl-md"
@@ -65,19 +65,19 @@ const Header = () => {
             className="h-full text-base text-amazon_blue text-m font-bodyFont flex-grow outline-none border-none px-2"
             type="text" placeholder="Search Amazon" 
           />
-          <span className="w-12 hfull flex items-center justify-center bg-amazon_yellow hover:bg-[#f3a847] duration-300 text-amazon_blue cursor-pointer rounded-tr-md rounded-br-md">
+          <span className="w-12 h-full flex items-center justify-center bg-amazon_yellow hover:bg-[#f3a847] duration-300 text-amazon_blue cursor-pointer rounded-tr-md rounded-br-md">
             <SearchIcon />
           </span>
         </div>
         {/* Search Bar ends */}
         {/* sign in starts */}
         <div className="flex flex-col items-start justify-center header-hover">
-          <p className="text-xs text-lightText font-light">Hello, Sign in</p>
-          <p className="text-sm font-semibold -mt-1 text-whiteText ">Accounts & Lists <span><ArrowDropDownOutlinedIcon/></span></p>
+          <p className="text-sm mdl:text-xs text-white mdl:text-lightText font-light">Hello, Sign in</p>
+          <p className="text-sm font-semibold -mt-1 text-whiteText hidden mdl:inline-flex">Accounts & Lists <span><ArrowDropDownOutlinedIcon/></span></p>
         </div>
         {/* Sign In Ends */}
         {/* Orders */}
-        <div className="flex flex-col items-start justify-center header-hover">
+        <div className="hidden lgl:flex flex-col items-start justify-center header-hover">
           <p className="text-xs text-lightText font-light">Returns</p>
           <p className="text-sm font-semibold -mt-1 text-whiteText ">& Orders</p>
         </div>

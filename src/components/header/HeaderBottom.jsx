@@ -28,11 +28,11 @@ const HeaderBottom = () => {
           {" "}
           <MenuIcon /> All
         </li>
-        <li className="header-hover">Today's Deals</li>
-        <li className="header-hover">Customer Service</li>
-        <li className="header-hover">Gift Cards</li>
-        <li className="header-hover">Registry</li>
-        <li className="header-hover">Sell</li>
+        <li className="header-hover hidden mdl:inline-flex">Today's Deals</li>
+        <li className="header-hover hidden mdl:inline-flex">Customer Service</li>
+        <li className="header-hover hidden mdl:inline-flex">Gift Cards</li>
+        <li className="header-hover hidden mdl:inline-flex">Registry</li>
+        <li className="header-hover hidden mdl:inline-flex">Sell</li>
       </ul>
       {/* List Items Ends */}
       {/* Sidenav Start Here */}
@@ -43,7 +43,7 @@ const HeaderBottom = () => {
               initial={{ x: -500, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="w-[350px] h-full bg-white
+              className="w-[80%] md:w-[350px] h-full bg-white
                      border border-black"
             >
               <div className="w-full bg-amazon_light text-white py-2 px-6 flex items-center gap-4">
@@ -84,7 +84,7 @@ const HeaderBottom = () => {
               </div>
               <span
                 onClick={() => setshowSideBar(false)}
-                className=" cursor-pointer absolute top-0 left-[355px] w-10 h-10 text-black flex items-center justify-center  border bg-gray-200 hover:bg-red-500 hover:text-white duration-300 rounded-sm"
+                className=" cursor-pointer absolute top-0 left-[71%] mdl:left-[360px] w-10 h-10 text-black flex items-center justify-center  border bg-gray-200 hover:bg-red-500 hover:text-white duration-200 rounded-sm"
               >
                 <CloseSharpIcon />
               </span>
