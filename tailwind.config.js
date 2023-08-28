@@ -21,8 +21,8 @@ module.exports = {
         
       },
       fontFamily:{
-        titleFont:'Roboto',
-        bodyFont:'Ubuntu',
+        titleFont:'Inter',
+        bodyFont:'Inter',
       },
       colors : {
         amazon_blue:"#131921",
