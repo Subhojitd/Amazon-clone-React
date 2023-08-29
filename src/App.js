@@ -28,11 +28,15 @@ const Layout = () => {
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
+      <Route>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} loader={productsData}></Route>
-          <Route path="/signin" element={<SignIn />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
         </Route>
+        <Route path="/signin" element={<SignIn/>}></Route>
+      </Route>
+        
+  
         
       
     )

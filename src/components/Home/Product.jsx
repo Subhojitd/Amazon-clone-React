@@ -35,7 +35,7 @@ const Product = () => {
   return (
     <div className="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6  xl:gap-10 px-4">
       {productData.map((item) => (
-        <div key={item.id} className="bg-white h-auto border-[1px] border-gray-200 py-8 z-30 hover:border-transparent shadownone hover:shadow-testShadow duration-200 flex flex-col gap-4 relative rounded-md group">
+        <div key={item.id} className="bg-white h-auto border-[1px] border-gray-200 py-8 z-30 hover:border-transparent shadownone hover:shadow-testShadow duration-200 flex flex-col justify-between gap-4 relative rounded-md group">
           
           <span className="text-xs capitalize italic absolute top-2 right-2 text-gray-500">{item.category}</span>
 
