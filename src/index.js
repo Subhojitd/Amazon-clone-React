@@ -2,6 +2,7 @@ import React from "react";
 import { store, persistor } from "./redux/Store";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
+import firebaseConfig from "./firebase.config";
 import ReactDOM from "react-dom/client";
 import "slick-carousel/slick/slick.css";
 import "./index.css";

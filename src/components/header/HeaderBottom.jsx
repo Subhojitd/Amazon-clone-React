@@ -4,10 +4,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseSharpIcon from "@mui/icons-material/CloseSharp";
 import AccountCircleSharpIcon from "@mui/icons-material/AccountCircleSharp";
 import SideHeaderContent from "./SideHeaderContent";
+import { useSelector } from "react-redux";
+
 
 const HeaderBottom = () => {
   const ref = useRef();
   const [showSideBar, setshowSideBar] = useState(false);
+  const userInfo = useSelector((state) => state.amazon.userInfo)
 
   useEffect(()=>{
     document.body.addEventListener('click',(e)=>{
@@ -48,9 +51,13 @@ const HeaderBottom = () => {
             >
               <div className="w-full bg-amazon_light text-white py-2 px-6 flex items-center gap-4">
                 <AccountCircleSharpIcon />
-                <h3 className=" font-titleFont font-bold text-lg tracking-wide">
+                {
+                  userInfo ? <h3 className=" font-titleFont capitalize font-bold text-lg tracking-wide">
+                  {userInfo.userName} 
+                </h3> : <h3 className=" font-titleFont font-bold text-lg tracking-wide">
                   Hello, Sign In{" "}
                 </h3>
+                }
               </div>
               {/* Side header Content */}
               <div className=" h-[90vh] overflow-y-scroll">

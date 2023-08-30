@@ -5,14 +5,27 @@ import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import SearchIcon from "@mui/icons-material/Search";
+import LogoutIcon from '@mui/icons-material/Logout';
 import { AllListItems } from "../../constants";
 import HeaderBottom from "./HeaderBottom";
 import { useSelector } from "react-redux";
-
+import { getAuth, signOut } from "firebase/auth";
+import  {useDispatch} from "react-redux"
+import { userSignOut } from "../../redux/AmazonSlice";
 const Header = () => {
+  const auth = getAuth();
+  const dispatch = useDispatch()
   const [showDropdown, setshowDropdown] = useState(false);
   const products = useSelector((state) => state.amazon.products);
+  const userInfo = useSelector((state) => state.amazon.userInfo)
 
+  const handleLogOut=()=>{
+    signOut(auth).then(() => {
+      dispatch(userSignOut())
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
   return (
     // Header Container
     <div className="w-full sticky top-0 z-50">
@@ -75,10 +88,14 @@ const Header = () => {
         {/* Search Bar ends */}
         {/* sign in starts */}
         <Link to="/signin">
-          <div className="flex flex-col items-start justify-center header-hover">
-            <p className="text-sm mdl:text-xs text-white mdl:text-lightText font-light">
+          <div className="flex flex-col gap-1 items-start justify-center header-hover">
+            {
+              userInfo ? <p className="text-xs capitalize  text-gray-100 font-medium">
+               Hello, {userInfo.userName}
+              </p>:<p className="text-sm mdl:text-xs text-white mdl:text-lightText font-light">
               Hello, Sign in
-            </p>
+            </p> 
+            }
             <p className="text-sm font-medium -mt-1 text-whiteText hidden mdl:inline-flex">
               Accounts & Lists{" "}
               <span>
@@ -107,6 +124,14 @@ const Header = () => {
           </p>
         </div>
         </Link>
+        {
+          userInfo && <div onClick={handleLogOut} className="flex flex-col justify-center icon header-hover relative">
+            <LogoutIcon/>
+            <p className="hidden mdl:inline-flex text-xs font-semibold text-whiteText">
+              Log Out
+            </p>
+          </div>
+        }
         {/* Cart-End */}
       </div>
       {/* Header Bottom */}

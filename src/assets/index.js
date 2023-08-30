@@ -8,6 +8,7 @@ import bannerImgThree from "./banner/bannerImgThree.jpg";
 import bannerImgFour from "./banner/bannerImgFour.jpg";
 import bannerImgFive from "./banner/bannerImgFive.jpg";
 import indFlag from "./indFlag.png";
+import darkLogo from "./dark-Logo.png";
 
 export {
   logo,
@@ -20,4 +21,5 @@ export {
   emptyCart,
   hasPrime,
   advertizement,
+  darkLogo,
 };

@@ -33,8 +33,14 @@ export const amazonSlice = createSlice({
     resetCart: (state) => {
       state.products = [];
     },
+    setUserInfo: (state, action) => {
+      state.userInfo = action.payload;
+    },
+    userSignOut: (state) => {
+      state.userInfo = null;
+    },
   },
 });
 
-export const { addToCart, deleteItem, resetCart,increaseQuantity,decreaseQuantity } = amazonSlice.actions;
+export const { addToCart, deleteItem, resetCart,increaseQuantity,decreaseQuantity,setUserInfo,userSignOut } = amazonSlice.actions;
 export default amazonSlice.reducer;
